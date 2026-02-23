@@ -3,132 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suppression de compte - Kaba</title>
+    <title>Suppression de Compte - Kaba Algérie</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #212121;
-            background: #fff;
+        :root {
+            --bordeaux: #800020;
+            --bg-light: #f4f4f7;
+            --text-dark: #2d3436;
+            --warning: #fab1a0;
         }
-        h1 { color: #000; font-size: 32px; margin-bottom: 10px; }
-        h2 { color: #000; font-size: 24px; margin-top: 40px; }
-        p { margin: 15px 0; }
-        ul { margin: 10px 0; padding-left: 20px; }
-        li { margin: 8px 0; }
-        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
-        .info { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; }
-        .contact { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 30px 0; }
-        a { color: #000; font-weight: bold; text-decoration: underline; }
-        .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #757575; font-size: 14px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--bordeaux);
+        }
+        h1 { color: var(--bordeaux); text-align: center; font-size: 32px; }
+        h2 { color: var(--bordeaux); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 35px; }
+        .method {
+            background: #fff5f6;
+            border: 1px solid #ffecec;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .btn-mail {
+            display: inline-block;
+            background: var(--bordeaux);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            margin-top: 10px;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #b2bec3;
+            font-size: 14px;
+        }
+        a { color: var(--bordeaux); text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+
+<div class="container">
     <h1>Suppression de compte Kaba</h1>
-    <p>Cette page explique comment supprimer votre compte Kaba et les données associées.</p>
-    
-    <h2>Comment supprimer votre compte</h2>
-    
-    <div class="info">
-        <strong>Méthode 1 : Via l'application (Recommandé)</strong>
+    <p style="text-align: center;">Nous sommes désolés de vous voir partir. Voici comment procéder pour supprimer vos données.</p>
+
+    <div class="method">
+        <h2>📱 Option 1 : Via l'application (Rapide)</h2>
         <ol>
-            <li>Ouvrez l'application Kaba</li>
-            <li>Allez dans <strong>Profil → Paramètres</strong></li>
-            <li>Cliquez sur <strong>"Supprimer mon compte"</strong></li>
-            <li>Confirmez la suppression</li>
+            <li>Ouvrez l'application <strong>Kaba</strong>.</li>
+            <li>Allez dans votre <strong>Profil</strong> puis <strong>Paramètres</strong>.</li>
+            <li>Appuyez sur <strong>"Supprimer mon compte"</strong>.</li>
+            <li>Confirmez votre choix.</li>
         </ol>
     </div>
-    
-    <div class="info">
-        <strong>Méthode 2 : Par email</strong>
-        <p>Envoyez un email à <a href="mailto:ive.tawasol@gmail.com">ive.tawasol@gmail.com</a> avec :</p>
-        <ul>
-            <li>Objet : "Demande de suppression de compte Kaba"</li>
-            <li>Votre email ou numéro de téléphone associé au compte</li>
-            <li>Confirmation que vous souhaitez supprimer définitivement votre compte</li>
-        </ul>
-        <p>Nous traiterons votre demande sous <strong>30 jours maximum</strong>.</p>
+
+    <div class="method">
+        <h2>📧 Option 2 : Par e-mail</h2>
+        <p>Envoyez votre demande à notre équipe support :</p>
+        <a href="mailto:kabaalgerie@gmail.com" class="btn-mail">kabaalgerie@gmail.com</a>
+        <p><small>Précisez votre nom d'utilisateur et le numéro de téléphone associé. Traitement sous 30 jours.</small></p>
     </div>
-    
-    <h2>Que se passe-t-il après la suppression ?</h2>
-    
-    <div class="warning">
-        <strong>⚠️ Attention : Cette action est irréversible</strong>
+
+    <div class="warning-box">
+        ⚠️ Attention : La suppression du compte est irréversible. Toutes vos annonces, vos messages et votre solde Wallet seront définitivement effacés.
     </div>
-    
-    <h3>Données supprimées immédiatement :</h3>
+
+    <h2>🗑️ Quelles données seront supprimées ?</h2>
     <ul>
-        <li><strong>Informations personnelles :</strong> Nom, prénom, email, numéro de téléphone</li>
-        <li><strong>Photo de profil</strong></li>
-        <li><strong>Annonces actives</strong> (désactivées et supprimées)</li>
-        <li><strong>Messages de chat</strong></li>
-        <li><strong>Historique du wallet</strong></li>
-        <li><strong>Notifications</strong></li>
+        <li><strong>Profil :</strong> Nom, photo, email et téléphone.</li>
+        <li><strong>Contenu :</strong> Toutes vos annonces et historiques de chat.</li>
+        <li><strong>Finances :</strong> Historique du wallet et transactions terminées.</li>
     </ul>
-    
-    <h3>Données conservées temporairement (30 jours) :</h3>
-    <ul>
-        <li><strong>Transactions en cours</strong> (pour résolution de litiges)</li>
-        <li><strong>Historique des signalements</strong> (pour modération)</li>
-    </ul>
-    <p>Ces données sont automatiquement supprimées après 30 jours.</p>
-    
-    <h3>Données conservées de façon permanente (anonymisées) :</h3>
-    <ul>
-        <li><strong>Statistiques générales</strong> (nombre de transactions, sans lien vers vous)</li>
-        <li><strong>Données légales obligatoires</strong> (si requis par la loi)</li>
-    </ul>
-    
-    <h2>Suppression partielle des données</h2>
-    
-    <p>Vous pouvez supprimer certaines données sans supprimer votre compte :</p>
-    
-    <ul>
-        <li><strong>Annonces :</strong> Supprimez vos annonces individuellement dans "Mes annonces"</li>
-        <li><strong>Messages :</strong> Supprimez des conversations dans le chat</li>
-        <li><strong>Photo de profil :</strong> Supprimez-la dans "Modifier le profil"</li>
-    </ul>
-    
-    <p>Ces suppressions sont immédiates et définitives.</p>
-    
-    <h2>Avant de supprimer votre compte</h2>
-    
-    <div class="warning">
-        <p><strong>Assurez-vous de :</strong></p>
-        <ul>
-            <li>✅ Récupérer votre solde wallet (retirez vos fonds avant suppression)</li>
-            <li>✅ Terminer toutes les transactions en cours</li>
-            <li>✅ Sauvegarder les informations importantes (conversations, contacts)</li>
-            <li>✅ Annuler les annonces actives</li>
-        </ul>
-    </div>
-    
-    <h2>Réactivation du compte</h2>
-    
-    <p>Une fois votre compte supprimé, vous avez <strong>30 jours</strong> pour changer d'avis :</p>
-    <ul>
-        <li>Contactez-nous à <a href="mailto:ive.tawasol@gmail.com">ive.tawasol@gmail.com</a></li>
-        <li>Nous pourrons restaurer votre compte avec toutes vos données</li>
-    </ul>
-    
-    <p><strong>Après 30 jours, la suppression est définitive et irréversible.</strong></p>
-    
-    <div class="contact">
-        <h2>Besoin d'aide ?</h2>
-        <p>Pour toute question concernant la suppression de votre compte :</p>
-        <ul>
-            <li><strong>Email :</strong> <a href="mailto:ive.tawasol@gmail.com">ive.tawasol@gmail.com</a></li>
-            <li><strong>Réponse :</strong> Sous 48 heures</li>
-        </ul>
-    </div>
-    
+
     <div class="footer">
-        <p>© 2024 Kaba. Tous droits réservés.</p>
-        <p><a href="index.html">Politique de confidentialité</a></p>
+        © 2026 Kaba Algérie • 
+        <a href="index.html">Politique de confidentialité</a> • 
+        <a href="home.html">Accueil</a>
     </div>
+</div>
+
 </body>
 </html>
-```
