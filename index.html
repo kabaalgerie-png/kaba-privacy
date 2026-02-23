@@ -3,96 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - Kaba Algérie</title>
+    <title>Kaba Algérie - Politique de Confidentialité</title>
     <style>
         :root {
-            --primary-color: #000;
-            --text-color: #333;
-            --light-grey: #f9f9f9;
+            --bordeaux: #800020;
+            --bg-light: #f4f4f7;
+            --text-dark: #2d3436;
         }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            color: var(--text-color);
-            background: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
         }
-        header {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--bordeaux);
+        }
+        .logo-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-placeholder {
+            background-color: var(--bordeaux);
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 25px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+        }
+        h1 {
+            color: var(--bordeaux);
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
+        }
+        .date {
+            text-align: center;
+            color: #636e72;
+            font-size: 14px;
             margin-bottom: 40px;
         }
-        h1 { color: var(--primary-color); font-size: 36px; margin: 0; }
-        h2 { color: var(--primary-color); font-size: 24px; margin-top: 40px; border-left: 4px solid var(--primary-color); padding-left: 15px; }
-        p { margin: 15px 0; }
-        ul { margin: 15px 0; padding-left: 25px; }
-        li { margin: 10px 0; }
-        .contact-box {
-            background: var(--light-grey);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #eee;
+        h2 {
+            color: var(--bordeaux);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
             margin-top: 30px;
+            font-size: 20px;
         }
-        a { color: #007bff; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-        .date { color: #888; font-size: 14px; margin-top: 5px; }
-        footer {
-            margin-top: 80px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .contact-card {
+            background-color: #fff5f6;
+            border: 1px dashed var(--bordeaux);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
             text-align: center;
-            color: #999;
-            font-size: 14px;
+        }
+        .contact-card a {
+            color: var(--bordeaux);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #b2bec3;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Politique de Confidentialité</h1>
-    <p class="date">Dernière mise à jour : 23 février 2026</p>
-</header>
+<div class="container">
+    <div class="logo-area">
+        <div class="logo-placeholder">Kaba</div>
+        <h1>Politique de Confidentialité</h1>
+        <p class="date">Mise à jour : 23 février 2026</p>
+    </div>
 
-<section>
     <h2>1. Introduction</h2>
-    <p><strong>Kaba Algérie</strong> ("nous", "notre") s'engage à protéger la vie privée des utilisateurs de son application. Cette politique détaille nos pratiques concernant la collecte et le traitement de vos données personnelles.</p>
+    <p>Bienvenue chez <strong>Kaba Algérie</strong>. Nous accordons une importance capitale à la sécurité de vos données. Cette politique explique comment nous traitons vos informations.</p>
 
     <h2>2. Collecte des données</h2>
-    <p>Dans le cadre de nos services de mise en relation pour le transport de colis, nous collectons :</p>
+    <p>Nous collectons les informations nécessaires au bon fonctionnement du service :</p>
     <ul>
-        <li><strong>Identité :</strong> Nom, prénom, adresse e-mail (kabaalgerie@gmail.com pour le support).</li>
-        <li><strong>Profil :</strong> Numéro de téléphone, photo de profil.</li>
-        <li><strong>Transactions :</strong> Historique des annonces et des échanges financiers via le wallet.</li>
-        <li><strong>Localisation :</strong> Zone géographique pour la pertinence des annonces.</li>
+        <li><strong>Identité :</strong> Nom, prénom, e-mail et numéro de téléphone.</li>
+        <li><strong>Service :</strong> Historique des colis et transactions via le Wallet Kaba.</li>
+        <li><strong>Localisation :</strong> Pour faciliter la mise en relation en Algérie.</li>
     </ul>
 
-    <h2>3. Utilisation des informations</h2>
-    <p>Vos données sont utilisées strictement pour :</p>
+    <h2>3. Utilisation des données</h2>
+    <p>Vos informations servent exclusivement à :</p>
     <ul>
-        <li>La gestion sécurisée de votre compte et du wallet.</li>
-        <li>La mise en relation entre expéditeurs et voyageurs.</li>
-        <li>L'envoi de notifications de suivi importantes.</li>
-        <li>La prévention de la fraude et la sécurité des échanges.</li>
+        <li>Gérer votre profil utilisateur et vos annonces.</li>
+        <li>Assurer la sécurité des paiements dans l'application.</li>
+        <li>Vous notifier des mises à jour de vos livraisons.</li>
     </ul>
 
     <h2>4. Partage et Sécurité</h2>
-    <p>Nous ne vendons aucune donnée à des tiers. Les données sont stockées de manière sécurisée (chiffrement SSL) via nos partenaires techniques (Supabase, Firebase).</p>
+    <p>Kaba Algérie ne vend aucune donnée à des tiers. Toutes les données sont chiffrées et protégées selon les normes de sécurité internationales.</p>
 
-    <h2>5. Vos Droits</h2>
-    <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour toute demande, vous pouvez nous contacter directement.</p>
-
-    <div class="contact-box">
-        <strong>Besoin d'aide ou de précision ?</strong><br>
-        Contactez notre responsable de la protection des données :<br>
-        📧 Email : <a href="mailto:kabaalgerie@gmail.com">kabaalgerie@gmail.com</a>
+    <div class="contact-card">
+        <strong>Besoin d'assistance ?</strong><br>
+        Une question sur vos données ? Contactez-nous :<br><br>
+        <a href="mailto:kabaalgerie@gmail.com">kabaalgerie@gmail.com</a>
     </div>
-</section>
+</div>
 
 <footer>
-    <p>© 2026 Kaba Algérie - Tous droits réservés.</p>
+    © 2026 Kaba Algérie. Tous droits réservés.
 </footer>
 
 </body>
