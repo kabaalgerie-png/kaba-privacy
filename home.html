@@ -4,171 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaba - Le monde à portée de main</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bordeaux-main: #8B1538;
+            --bordeaux-dark: #5a0e24;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #8B1538 0%, #5a0e24 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--bordeaux-main) 0%, var(--bordeaux-dark) 100%);
+            color: var(--white);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
-        .container {
-            max-width: 800px;
+
+        .hero {
             text-align: center;
+            padding: 80px 20px;
+            max-width: 900px;
         }
-        .logo {
-            width: 120px;
-            height: 120px;
-            background: #fff;
-            border-radius: 24px;
-            margin: 0 auto 40px;
+
+        .logo-badge {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            color: var(--bordeaux-main);
+            border-radius: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 72px;
-            font-weight: bold;
-            color: #8B1538;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
+            font-size: 55px;
             font-weight: 800;
+            margin: 0 auto 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
         }
-        .tagline {
-            font-size: 24px;
-            margin-bottom: 40px;
-            opacity: 0.9;
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        .description {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 50px;
-            opacity: 0.85;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-        .feature {
-            background: rgba(255,255,255,0.1);
-            padding: 30px 20px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-        }
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        .feature-title {
-            font-size: 20px;
-            font-weight: bold;
+
+        h1 {
+            font-size: clamp(40px, 8vw, 65px);
+            font-weight: 800;
+            letter-spacing: -1px;
             margin-bottom: 10px;
         }
-        .feature-desc {
-            font-size: 14px;
+
+        .tagline {
+            font-size: clamp(18px, 4vw, 24px);
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 50px;
             opacity: 0.8;
         }
-        .cta {
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-icon { font-size: 40px; margin-bottom: 15px; }
+        .card-title { font-weight: 600; font-size: 18px; margin-bottom: 10px; }
+        .card-text { font-size: 14px; opacity: 0.7; }
+
+        .cta-group {
             margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
+
         .btn {
-            display: inline-block;
-            background: #fff;
-            color: #8B1538;
-            padding: 18px 40px;
-            border-radius: 12px;
+            padding: 18px 35px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--bordeaux-main);
         }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+        }
+
         .btn-secondary {
-            background: transparent;
-            border: 2px solid #fff;
-            color: #fff;
+            border: 2px solid var(--white);
+            color: var(--white);
         }
-        .footer {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            opacity: 0.7;
-            font-size: 14px;
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--bordeaux-main);
         }
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
+
+        footer {
+            margin-top: auto;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+            width: 100%;
         }
+
+        footer a { color: white; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">K</div>
-        
+
+    <section class="hero">
+        <div class="logo-badge">K</div>
         <h1>Kaba</h1>
         <div class="tagline">Le monde à portée de main 🌍</div>
-        
         <p class="description">
-            La marketplace qui connecte l'Algérie au reste du monde. 
-            Achetez des produits internationaux et recevez-les en Algérie 
-            grâce à notre réseau de voyageurs de confiance.
+            La première marketplace communautaire qui connecte les Algériens aux voyageurs du monde entier. Faites-vous livrer vos produits préférés en toute sécurité.
         </p>
-        
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">🛍️</div>
-                <div class="feature-title">Achetez partout</div>
-                <div class="feature-desc">Des milliers de produits du monde entier</div>
+
+        <div class="grid-features">
+            <div class="card">
+                <div class="card-icon">🛍️</div>
+                <div class="card-title">Shopping Global</div>
+                <div class="card-text">Accédez aux boutiques d'Europe, USA et plus encore depuis l'Algérie.</div>
             </div>
-            
-            <div class="feature">
-                <div class="feature-icon">✈️</div>
-                <div class="feature-title">Livraison rapide</div>
-                <div class="feature-desc">Via voyageurs vérifiés</div>
+            <div class="card">
+                <div class="card-icon">✈️</div>
+                <div class="card-title">Voyageurs Vérifiés</div>
+                <div class="card-text">Un réseau de confiance pour transporter vos colis rapidement.</div>
             </div>
-            
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-title">100% Sécurisé</div>
-                <div class="feature-desc">Paiement protégé avec escrow</div>
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <div class="card-title">Paiement Sécurisé</div>
+                <div class="card-text">Système de wallet avec protection des fonds jusqu'à réception.</div>
             </div>
         </div>
-        
-        <div class="cta">
-            <a href="https://play.google.com/store/apps/details?id=com.kaba.app" class="btn">
-                Télécharger sur Google Play
-            </a>
-            <a href="mailto:ive.tawasol@gmail.com" class="btn btn-secondary">
-                Nous contacter
-            </a>
+
+        <div class="cta-group">
+            <a href="https://play.google.com/store" class="btn btn-primary">Bientôt sur Google Play</a>
+            <a href="mailto:kabaalgerie@gmail.com" class="btn btn-secondary">Contact Support</a>
         </div>
-        
-        <div class="footer">
-            <a href="index.html">Politique de confidentialité</a>
-            <a href="delete-account.html">Supprimer mon compte</a>
-            <br><br>
-            © 2024 Kaba. Tous droits réservés.
+    </section>
+
+    <footer>
+        <p>© 2026 Kaba Algérie. Tous droits réservés.</p>
+        <div style="margin-top: 10px;">
+            <a href="index.html">Confidentialité</a> | 
+            <a href="delete-account.html">Suppression de compte</a>
         </div>
-    </div>
+    </footer>
+
 </body>
 </html>
-```
