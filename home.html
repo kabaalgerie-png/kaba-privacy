@@ -26,26 +26,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* Évite le scroll horizontal parasite */
         }
 
         .hero {
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px; /* Réduit pour mobile */
             max-width: 900px;
+            width: 100%;
         }
 
         .logo-badge {
-            width: 100px;
-            height: 100px;
+            width: 80px; /* Un peu plus petit pour mobile */
+            height: 80px;
             background: var(--white);
             color: var(--bordeaux-main);
-            border-radius: 22px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 55px;
+            font-size: 45px;
             font-weight: 800;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             animation: float 3s ease-in-out infinite;
         }
@@ -56,79 +58,94 @@
         }
 
         h1 {
-            font-size: clamp(40px, 8vw, 65px);
+            font-size: clamp(35px, 10vw, 65px); /* Ajusté pour mobile */
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 10px;
         }
 
         .tagline {
-            font-size: clamp(18px, 4vw, 24px);
-            opacity: 0.9;
-            margin-bottom: 30px;
+            font-size: clamp(16px, 5vw, 24px);
+            opacity: 0.95;
+            margin-bottom: 25px;
             font-weight: 400;
+            padding: 0 10px;
         }
 
         .description {
-            font-size: 17px;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: 0 auto 50px;
-            opacity: 0.8;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.85;
+            padding: 0 15px;
         }
 
         .grid-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr; /* 1 colonne par défaut (mobile) */
+            gap: 15px;
             width: 100%;
             max-width: 1000px;
-            padding: 20px;
+            padding: 15px;
+        }
+
+        /* Passage en 3 colonnes sur tablette/ordi */
+        @media (min-width: 768px) {
+            .grid-features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+            .hero { padding: 80px 20px; }
+            .logo-badge { width: 100px; height: 100px; font-size: 55px; }
         }
 
         .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 30px;
+            -webkit-backdrop-filter: blur(10px); /* Support Safari mobile */
+            padding: 25px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
             transition: transform 0.3s ease;
+            text-align: left; /* Meilleure lisibilité sur mobile */
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .card-icon { font-size: 40px; margin-bottom: 15px; }
-        .card-title { font-weight: 600; font-size: 18px; margin-bottom: 10px; }
-        .card-text { font-size: 14px; opacity: 0.7; }
+        .card-icon { font-size: 35px; margin-bottom: 10px; }
+        .card-title { font-weight: 600; font-size: 18px; margin-bottom: 8px; }
+        .card-text { font-size: 14px; opacity: 0.8; line-height: 1.4; }
 
         .cta-group {
-            margin-top: 50px;
+            margin-top: 40px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column; /* Boutons empilés sur mobile */
+            align-items: center;
             gap: 15px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 480px) {
+            .cta-group { flex-direction: row; justify-content: center; }
         }
 
         .btn {
-            padding: 18px 35px;
+            width: 100%; /* Largeur totale sur mobile */
+            max-width: 300px;
+            padding: 16px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 16px;
+            font-size: 15px;
+            text-align: center;
         }
 
         .btn-primary {
             background: var(--white);
             color: var(--bordeaux-main);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .btn-secondary {
@@ -136,21 +153,16 @@
             color: var(--white);
         }
 
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--bordeaux-main);
-        }
-
         footer {
             margin-top: auto;
             padding: 40px 20px;
             text-align: center;
-            font-size: 13px;
-            opacity: 0.6;
+            font-size: 12px;
+            opacity: 0.7;
             width: 100%;
         }
 
-        footer a { color: white; text-decoration: none; margin: 0 10px; }
+        footer a { color: white; text-decoration: underline; margin: 0 8px; }
     </style>
 </head>
 <body>
@@ -160,24 +172,24 @@
         <h1>Kaba</h1>
         <div class="tagline">Le monde à portée de main 🌍</div>
         <p class="description">
-            La première marketplace communautaire qui connecte les Algériens aux voyageurs du monde entier. Faites-vous livrer vos produits préférés en toute sécurité.
+            La première marketplace communautaire qui connecte les Algériens aux voyageurs du monde entier.
         </p>
 
         <div class="grid-features">
             <div class="card">
                 <div class="card-icon">🛍️</div>
                 <div class="card-title">Shopping Global</div>
-                <div class="card-text">Accédez aux boutiques d'Europe, USA et plus encore depuis l'Algérie.</div>
+                <div class="card-text">Accédez aux boutiques d'Europe et USA depuis l'Algérie.</div>
             </div>
             <div class="card">
                 <div class="card-icon">✈️</div>
                 <div class="card-title">Voyageurs Vérifiés</div>
-                <div class="card-text">Un réseau de confiance pour transporter vos colis rapidement.</div>
+                <div class="card-text">Un réseau de confiance pour vos colis.</div>
             </div>
             <div class="card">
                 <div class="card-icon">🔒</div>
                 <div class="card-title">Paiement Sécurisé</div>
-                <div class="card-text">Système de wallet avec protection des fonds jusqu'à réception.</div>
+                <div class="card-text">Protection des fonds jusqu'à réception.</div>
             </div>
         </div>
 
@@ -189,9 +201,9 @@
 
     <footer>
         <p>© 2026 Kaba Algérie. Tous droits réservés.</p>
-        <div style="margin-top: 10px;">
-            <a href="index.html">Confidentialité</a> | 
-            <a href="delete-account.html">Suppression de compte</a>
+        <div style="margin-top: 15px;">
+            <a href="privacy.html">Confidentialité</a>
+            <a href="delete-account.html">Suppression compte</a>
         </div>
     </footer>
 
