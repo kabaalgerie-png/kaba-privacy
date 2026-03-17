@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaba - Le monde à portée de main</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <style>
         :root {
             --bordeaux-main: #8B1538;
@@ -26,18 +30,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden; /* Évite le scroll horizontal parasite */
+            overflow-x: hidden;
         }
 
         .hero {
             text-align: center;
-            padding: 60px 20px; /* Réduit pour mobile */
+            padding: 60px 20px;
             max-width: 900px;
             width: 100%;
         }
 
         .logo-badge {
-            width: 80px; /* Un peu plus petit pour mobile */
+            width: 80px;
             height: 80px;
             background: var(--white);
             color: var(--bordeaux-main);
@@ -58,7 +62,7 @@
         }
 
         h1 {
-            font-size: clamp(35px, 10vw, 65px); /* Ajusté pour mobile */
+            font-size: clamp(35px, 10vw, 65px);
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 10px;
@@ -83,14 +87,13 @@
 
         .grid-features {
             display: grid;
-            grid-template-columns: 1fr; /* 1 colonne par défaut (mobile) */
+            grid-template-columns: 1fr;
             gap: 15px;
             width: 100%;
             max-width: 1000px;
             padding: 15px;
         }
 
-        /* Passage en 3 colonnes sur tablette/ordi */
         @media (min-width: 768px) {
             .grid-features {
                 grid-template-columns: repeat(3, 1fr);
@@ -104,13 +107,15 @@
         .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* Support Safari mobile */
+            -webkit-backdrop-filter: blur(10px);
             padding: 25px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.15);
             transition: transform 0.3s ease;
-            text-align: left; /* Meilleure lisibilité sur mobile */
+            text-align: left;
         }
+
+        .card:hover { transform: translateY(-5px); }
 
         .card-icon { font-size: 35px; margin-bottom: 10px; }
         .card-title { font-weight: 600; font-size: 18px; margin-bottom: 8px; }
@@ -119,7 +124,7 @@
         .cta-group {
             margin-top: 40px;
             display: flex;
-            flex-direction: column; /* Boutons empilés sur mobile */
+            flex-direction: column;
             align-items: center;
             gap: 15px;
             width: 100%;
@@ -131,7 +136,7 @@
         }
 
         .btn {
-            width: 100%; /* Largeur totale sur mobile */
+            width: 100%;
             max-width: 300px;
             padding: 16px 30px;
             border-radius: 50px;
@@ -152,6 +157,8 @@
             border: 2px solid var(--white);
             color: var(--white);
         }
+
+        .btn:hover { opacity: 0.9; transform: scale(1.02); }
 
         footer {
             margin-top: auto;
@@ -184,12 +191,12 @@
             <div class="card">
                 <div class="card-icon">✈️</div>
                 <div class="card-title">Voyageurs Vérifiés</div>
-                <div class="card-text">Un réseau de confiance pour vos colis.</div>
+                <div class="card-text">Un réseau de confiance pour transporter vos colis.</div>
             </div>
             <div class="card">
                 <div class="card-icon">🔒</div>
                 <div class="card-title">Paiement Sécurisé</div>
-                <div class="card-text">Protection des fonds jusqu'à réception.</div>
+                <div class="card-text">Protection des fonds garantie jusqu'à la réception.</div>
             </div>
         </div>
 
@@ -202,7 +209,7 @@
     <footer>
         <p>© 2026 Kaba Algérie. Tous droits réservés.</p>
         <div style="margin-top: 15px;">
-            <a href="privacy.html">Confidentialité</a>
+            <a href="https://kabaalgerie-png.github.io/kaba-privacy/">Confidentialité</a>
             <a href="delete-account.html">Suppression compte</a>
         </div>
     </footer>
