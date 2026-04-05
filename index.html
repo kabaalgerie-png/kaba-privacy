@@ -7,126 +7,303 @@
     
     <title>Kaba Algérie - Politique de Confidentialité | Lakhal Oussama</title>
     <style>
-        :root {
-            --bordeaux: #800020;
-            --bg-light: #f4f4f7;
-            --text-dark: #2d3436;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        :root {
+            --algeria-green: #006233;
+            --algeria-red: #D21034;
+            --kaba-red: #8B1538;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --shadow-sm: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-md: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-light);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f0f2f5 0%, #e9ecef 100%);
             color: var(--text-dark);
             line-height: 1.6;
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
         }
+
+        .flag-banner {
+            background: linear-gradient(90deg, var(--algeria-green) 0%, var(--algeria-green) 33%, #fff 33%, #fff 66%, var(--algeria-red) 66%, var(--algeria-red) 100%);
+            height: 8px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
         .container {
-            max-width: 850px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 60px auto 40px;
             background: #fff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-top: 8px solid var(--bordeaux);
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-        .logo-area {
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .header {
+            background: linear-gradient(120deg, #fff8f0 0%, #fff 100%);
+            padding: 40px 40px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0,98,51,0.1);
+            position: relative;
         }
-        .logo-placeholder {
-            background-color: var(--bordeaux);
+
+        .flag-deco {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 48px;
+            filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.2));
+            animation: wave 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .logo-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+
+        .logo {
+            background: linear-gradient(145deg, var(--kaba-red), #5a0e24);
             color: white;
             font-size: 42px;
-            font-weight: bold;
-            width: 120px;
-            height: 120px;
-            line-height: 120px;
-            border-radius: 25px;
+            font-weight: 800;
+            width: auto;
+            min-width: 160px;
+            padding: 20px 35px;
+            border-radius: 60px;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+            box-shadow: 0 15px 30px rgba(139, 21, 56, 0.4);
+            margin-bottom: 20px;
+            transition: all 0.2s;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation: heartbeat 1.5s ease-in-out infinite;
+            letter-spacing: 2px;
         }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 15px 30px rgba(139, 21, 56, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 20px 40px rgba(139, 21, 56, 0.6);
+            }
+        }
+
+        .logo:hover {
+            animation-play-state: paused;
+            transform: scale(1.02);
+        }
+
         h1 {
-            color: var(--bordeaux);
-            text-align: center;
-            font-size: 28px;
-            margin-top: 20px;
+            color: var(--kaba-red);
+            font-size: 32px;
+            margin-top: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
+
         .date {
-            text-align: center;
-            color: #636e72;
+            color: #6c757d;
             font-size: 14px;
-            margin-bottom: 40px;
+            margin-top: 8px;
+            display: inline-block;
+            background: #f1f3f5;
+            padding: 5px 15px;
+            border-radius: 50px;
         }
+
+        .content {
+            padding: 40px;
+        }
+
         h2 {
-            color: var(--bordeaux);
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            font-size: 20px;
+            color: var(--algeria-green);
+            border-left: 6px solid var(--kaba-red);
+            padding-left: 20px;
+            margin: 35px 0 20px 0;
+            font-size: 24px;
+            font-weight: 600;
         }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        .contact-card {
-            background-color: #fff5f6;
-            border: 1px dashed var(--bordeaux);
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 40px;
-            text-align: center;
+
+        h2:first-of-type {
+            margin-top: 0;
         }
-        .contact-card a {
-            color: var(--bordeaux);
+
+        p {
+            margin-bottom: 18px;
+            color: #2c3e50;
+        }
+
+        ul {
+            margin: 20px 0 20px 40px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        li::marker {
+            color: var(--kaba-red);
             font-weight: bold;
+        }
+
+        .contact-card {
+            background: linear-gradient(145deg, #fff5f0, #fff);
+            border: 1px solid rgba(139,21,56,0.2);
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 45px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--kaba-red);
+            box-shadow: 0 15px 30px rgba(139,21,56,0.1);
+        }
+
+        .contact-card a {
+            color: var(--kaba-red);
+            font-weight: 700;
             text-decoration: none;
             font-size: 18px;
+            background: rgba(139,21,56,0.05);
+            padding: 10px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            transition: 0.2s;
         }
+
+        .contact-card a:hover {
+            background: var(--kaba-red);
+            color: white;
+            transform: scale(1.02);
+        }
+
         footer {
+            background: #f8f9fa;
+            border-top: 1px solid rgba(0,98,51,0.1);
+            padding: 25px 40px;
             text-align: center;
-            margin-top: 40px;
-            color: #b2bec3;
             font-size: 13px;
-            padding-bottom: 20px;
+            color: #6c757d;
+        }
+
+        footer a {
+            color: var(--algeria-green);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--kaba-red);
+            text-decoration: underline;
+        }
+
+        .small-flag {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                margin: 40px 15px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .content {
+                padding: 25px;
+            }
+            .logo {
+                font-size: 28px;
+                min-width: 130px;
+                padding: 15px 25px;
+            }
+            .flag-deco {
+                font-size: 36px;
+                top: 10px;
+                right: 15px;
+            }
+            h1 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="flag-banner"></div>
 
-<div class="container">
-    <div class="logo-area">
-        <div class="logo-placeholder">Kaba</div>
-        <h1>Politique de Confidentialité</h1>
-        <p class="date">Dernière mise à jour : 5 avril 2026</p>
+    <div class="container">
+        <div class="header">
+            <div class="flag-deco" aria-label="Drapeau de l'Algérie">🇩🇿</div>
+            <div class="logo-wrapper">
+                <div class="logo">Kaba</div>
+            </div>
+            <h1>Politique de Confidentialité</h1>
+            <div class="date">📅 Dernière mise à jour : 5 avril 2026</div>
+        </div>
+
+        <div class="content">
+            <h2>1. Introduction</h2>
+            <p>Bienvenue chez <strong>Kaba Algérie</strong> <span class="small-flag">🇩🇿</span>. Cette plateforme est gérée par <strong>LAKHAL OUSSAMA</strong>, exerçant sous le statut légal d'Auto-entrepreneur immatriculé sous le numéro <strong>108611170348226744</strong>. Nous accordons une importance capitale à la sécurité de vos données.</p>
+
+            <h2>2. Collecte des données</h2>
+            <p>Nous collectons les informations nécessaires au bon fonctionnement du service de marketplace :</p>
+            <ul>
+                <li><strong>Identité :</strong> Nom, prénom, adresse e-mail et numéro de téléphone.</li>
+                <li><strong>Transactions :</strong> Historique des colis et mouvements financiers via le Wallet Kaba.</li>
+                <li><strong>Localisation :</strong> Données GPS nécessaires pour la mise en relation entre acheteurs et voyageurs en Algérie.</li>
+            </ul>
+
+            <h2>3. Utilisation des données</h2>
+            <p>Vos informations servent exclusivement à gérer votre profil, assurer la sécurité des transactions internationales et vous notifier de l'état de vos commandes.</p>
+
+            <h2>4. Droits des utilisateurs</h2>
+            <p>Conformément à la législation sur la protection des données, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles à tout moment via l'application ou par e-mail.</p>
+
+            <div class="contact-card">
+                <strong>📩 Besoin d'assistance ?</strong><br>
+                Une question sur la gestion de vos données ?<br><br>
+                <a href="mailto:kabaalgerie@gmail.com">kabaalgerie@gmail.com</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024-2026 Kaba Algérie | <strong>LAKHAL OUSSAMA</strong> | Vieux-Kouba, Alger (16050) 🇩🇿</p>
+            <p>
+                <a href="https://kabaalgerie-png.github.io/kaba-privacy/home.html">🏠 Accueil</a> | 
+                <a href="https://kabaalgerie-png.github.io/kaba-privacy/delete-account.html">🗑️ Supprimer mon compte</a>
+            </p>
+        </footer>
     </div>
-
-    <h2>1. Introduction</h2>
-    <p>Bienvenue chez <strong>Kaba Algérie</strong>. Cette plateforme est gérée par <strong>LAKHAL OUSSAMA</strong>, exerçant sous le statut légal d'Auto-entrepreneur immatriculé sous le numéro <strong>108611170348226744</strong>. Nous accordons une importance capitale à la sécurité de vos données.</p>
-
-    <h2>2. Collecte des données</h2>
-    <p>Nous collectons les informations nécessaires au bon fonctionnement du service de marketplace :</p>
-    <ul>
-        <li><strong>Identité :</strong> Nom, prénom, adresse e-mail et numéro de téléphone.</li>
-        <li><strong>Transactions :</strong> Historique des colis et mouvements financiers via le Wallet Kaba.</li>
-        <li><strong>Localisation :</strong> Données GPS nécessaires pour la mise en relation entre acheteurs et voyageurs en Algérie.</li>
-    </ul>
-
-    <h2>3. Utilisation des données</h2>
-    <p>Vos informations servent exclusivement à gérer votre profil, assurer la sécurité des transactions internationales et vous notifier de l'état de vos commandes.</p>
-
-    <h2>4. Droits des utilisateurs</h2>
-    <p>Conformément à la législation sur la protection des données, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles à tout moment via l'application ou par e-mail.</p>
-
-    <div class="contact-card">
-        <strong>Besoin d'assistance ?</strong><br>
-        Une question sur la gestion de vos données ?<br><br>
-        <a href="mailto:kabaalgerie@gmail.com">kabaalgerie@gmail.com</a>
-    </div>
-</div>
-
-<footer>
-    © 2024-2026 Kaba Algérie | <strong>LAKHAL OUSSAMA</strong> | Vieux-Kouba, Alger (16050)<br>
-    <a href="index.html" style="color: #b2bec3; margin-right: 15px;">Accueil</a> | 
-    <a href="delete-account.html" style="color: #b2bec3; margin-left: 15px;">Supprimer mon compte</a>
-</footer>
-
 </body>
 </html>
