@@ -6,131 +6,298 @@
     <meta name="google-site-verification" content="FJR7VZozWViTfmeC9IINkgdBCvtxFb9CslRDdqJHxK8" />
     
     <title>Kaba - Marketplace Internationale | Lakhal Oussama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #8B1538;
-            --primary-dark: #5a0e24;
-            --accent: #FFD700;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --kaba-red: #8B1538;
+            --kaba-dark: #5a0e24;
+            --algeria-green: #006233;
+            --algeria-red: #D21034;
+            --white: #ffffff;
+            --off-white: #fef9f7;
+            --glass: rgba(255, 255, 255, 0.08);
+            --shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: radial-gradient(circle at top right, var(--primary) 0%, var(--primary-dark) 100%);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, var(--kaba-red) 0%, var(--kaba-dark) 100%);
             color: var(--white);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            line-height: 1.6;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        .container { max-width: 850px; width: 100%; text-align: center; }
+        .flag-banner {
+            background: linear-gradient(90deg, var(--algeria-green) 0%, var(--algeria-green) 33%, var(--white) 33%, var(--white) 66%, var(--algeria-red) 66%, var(--algeria-red) 100%);
+            height: 6px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
 
         .logo {
-            width: 110px; height: 110px;
+            width: 110px;
+            height: 110px;
             background: var(--white);
-            border-radius: 30px;
-            margin: 0 auto 30px;
+            border-radius: 32px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 65px;
-            font-weight: 900;
-            color: var(--primary);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            font-size: 68px;
+            font-weight: 800;
+            color: var(--kaba-red);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
-        h1 { font-size: clamp(45px, 10vw, 70px); margin-bottom: 10px; letter-spacing: -2px; }
-        .tagline { font-size: 24px; margin-bottom: 40px; font-weight: 300; opacity: 0.9; }
+        .logo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #ffe0e6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: clamp(18px, 4vw, 24px);
+            font-weight: 400;
+            opacity: 0.92;
+            margin-bottom: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            padding: 8px 20px;
+            border-radius: 60px;
+        }
 
         .hero-card {
             background: var(--glass);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            padding: 40px 32px;
+            border-radius: 40px;
             border: 1px solid rgba(255,255,255,0.2);
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .hero-card:hover {
+            transform: scale(1.01);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .hero-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 60px 0 50px;
         }
 
         .feature {
-            padding: 25px;
-            background: rgba(0,0,0,0.15);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover { transform: translateY(-8px); background: rgba(255,255,255,0.08); }
-        .feature-icon { font-size: 42px; margin-bottom: 15px; }
-        .feature-title { font-weight: 700; font-size: 19px; margin-bottom: 10px; color: var(--accent); }
-
-        .btn {
-            display: inline-block;
-            background: var(--white);
-            color: var(--primary);
-            padding: 18px 40px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 18px;
-            margin: 10px;
-            transition: all 0.4s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-
-        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
-
-        .footer {
-            margin-top: 80px;
-            padding: 40px 20px;
-            width: 100%;
             background: rgba(0,0,0,0.2);
-            border-radius: 20px;
-            font-size: 14px;
+            backdrop-filter: blur(8px);
+            padding: 30px 20px;
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #FFD966;
+        }
+
+        .feature p {
+            font-size: 15px;
             opacity: 0.9;
         }
 
-        .legal-links a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0 20px;
         }
 
-        .legal-links a:hover { text-decoration: underline; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--kaba-red);
+            padding: 16px 36px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background: #fff5f7;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 40px 24px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            font-size: 14px;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .legal-links a {
+            color: #FFD966;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+            color: var(--white);
+        }
 
         .dev-info {
             margin-top: 25px;
-            padding: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-style: normal;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .dev-info strong {
+            color: #FFD966;
+        }
+
+        .small-flag {
+            display: inline-block;
+            margin-left: 6px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 16px;
+            }
+            .hero-card {
+                padding: 28px 20px;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+            .feature {
+                padding: 24px 16px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="flag-banner"></div>
+
     <div class="container">
-        <div class="logo">K</div>
+        <div class="logo-wrapper">
+            <div class="logo">K</div>
+        </div>
         
         <h1>Kaba</h1>
-        <p class="tagline">Le monde à portée de main 🌍</p>
+        <p class="tagline">
+            Le monde à portée de main 🌍
+            <span class="small-flag">🇩🇿</span>
+        </p>
         
         <div class="hero-card">
-            <p style="font-size: 20px;">L'application qui révolutionne l'achat international en Algérie. Connectez-vous avec des voyageurs certifiés et recevez vos produits préférés en toute sécurité.</p>
+            <p>L'application qui révolutionne l'achat international en Algérie. Connectez-vous avec des voyageurs certifiés et recevez vos produits préférés en toute sécurité.</p>
         </div>
         
         <div class="features">
@@ -142,7 +309,7 @@
             <div class="feature">
                 <div class="feature-icon">🤝</div>
                 <div class="feature-title">Confiance</div>
-                <p>Un système de vérification rigoureux pour chaque transaction.</p>
+                <p>Système de vérification rigoureux pour chaque transaction.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🛡️</div>
@@ -151,25 +318,25 @@
             </div>
         </div>
         
-        <div class="cta">
-            <a href="https://play.google.com/store/apps/details?id=com.kaba.app" class="btn">Télécharger Kaba</a>
-            <a href="mailto:kabaalgerie@gmail.com" class="btn btn-secondary">Contact Support</a>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=com.kaba.app" class="btn">📱 Télécharger Kaba</a>
+            <a href="mailto:kabaalgerie@gmail.com" class="btn btn-secondary">✉️ Contact Support</a>
         </div>
         
-        <footer class="footer">
+        <footer>
             <div class="legal-links">
-                <a href="https://kabaalgerie-png.github.io/kaba-privacy/">Politique de confidentialité</a>
-                <a href="delete-account.html">Suppression de compte</a>
+                <a href="https://kabaalgerie-png.github.io/kaba-privacy/">🔒 Politique de confidentialité</a>
+                <a href="https://kabaalgerie-png.github.io/kaba-privacy/delete-account.html">🗑️ Suppression de compte</a>
             </div>
             
             <div class="dev-info">
                 <strong>Propriétaire & Développeur : Lakhal Oussama</strong><br>
-                Projet : Kaba Marketplace<br>
-                Contact : kabaalgerie@gmail.com<br>
-                <em>Identité certifiée : Lakhal Oussama</em>
+                Projet : Kaba Marketplace – Algérie 🇩🇿<br>
+                Contact : <a href="mailto:kabaalgerie@gmail.com" style="color:#FFD966;">kabaalgerie@gmail.com</a><br>
+                <em>Identité certifiée : Auto-entrepreneur N° 108611170348226744</em>
             </div>
             
-            <p style="margin-top:20px; opacity: 0.6;">© 2024-2026 Kaba. Tous droits réservés.</p>
+            <p style="margin-top:25px; opacity: 0.6;">© 2024-2026 Kaba. Tous droits réservés.</p>
         </footer>
     </div>
 </body>
