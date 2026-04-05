@@ -6,179 +6,171 @@
     <meta name="google-site-verification" content="google75057614f5afd1ce" />
     
     <title>Kaba - Marketplace Internationale | Lakhal Oussama</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --bordeaux-main: #8B1538;
-            --bordeaux-dark: #5a0e24;
-            --white: #ffffff;
+            --primary: #8B1538;
+            --primary-dark: #5a0e24;
             --accent: #FFD700;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: linear-gradient(135deg, var(--bordeaux-main) 0%, var(--bordeaux-dark) 100%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(circle at top right, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            max-width: 900px;
-            width: 100%;
-        }
+        .container { max-width: 850px; width: 100%; text-align: center; }
 
-        .logo-badge {
-            width: 80px;
-            height: 80px;
+        .logo {
+            width: 110px; height: 110px;
             background: var(--white);
-            color: var(--bordeaux-main);
-            border-radius: 20px;
+            border-radius: 30px;
+            margin: 0 auto 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 45px;
-            font-weight: 800;
-            margin: 0 auto 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            animation: float 3s ease-in-out infinite;
+            font-size: 65px;
+            font-weight: 900;
+            color: var(--primary);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        h1 { font-size: clamp(45px, 10vw, 70px); margin-bottom: 10px; letter-spacing: -2px; }
+        .tagline { font-size: 24px; margin-bottom: 40px; font-weight: 300; opacity: 0.9; }
+
+        .hero-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        h1 {
-            font-size: clamp(35px, 10vw, 65px);
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: clamp(16px, 5vw, 24px);
-            opacity: 0.95;
-            margin-bottom: 25px;
-            color: var(--accent);
-        }
-
-        .grid-features {
+        .features {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            width: 100%;
-            max-width: 1000px;
-            padding: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
 
-        @media (min-width: 768px) {
-            .grid-features {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        .feature {
             padding: 25px;
+            background: rgba(0,0,0,0.15);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.15);
-            text-align: left;
-        }
-
-        .card-icon { font-size: 35px; margin-bottom: 10px; }
-        .card-title { font-weight: 600; font-size: 18px; margin-bottom: 8px; }
-        .card-text { font-size: 14px; opacity: 0.8; }
-
-        .cta-group {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        @media (min-width: 480px) {
-            .cta-group { flex-direction: row; justify-content: center; }
-        }
-
-        .btn {
-            padding: 16px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s ease;
         }
 
-        .btn-primary { background: var(--white); color: var(--bordeaux-main); }
-        .btn-secondary { border: 2px solid var(--white); color: var(--white); }
+        .feature:hover { transform: translateY(-8px); background: rgba(255,255,255,0.08); }
+        .feature-icon { font-size: 42px; margin-bottom: 15px; }
+        .feature-title { font-weight: 700; font-size: 19px; margin-bottom: 10px; color: var(--accent); }
 
-        footer {
-            margin-top: auto;
-            padding: 40px 20px;
-            text-align: center;
-            background: rgba(0,0,0,0.2);
-            width: 100%;
+        .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            margin: 10px;
+            transition: all 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .footer-links a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; }
-        .dev-credit { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+
+        .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
+
+        .footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .legal-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .legal-links a:hover { text-decoration: underline; }
+
+        .dev-info {
+            margin-top: 25px;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: normal;
+        }
     </style>
 </head>
 <body>
-
-    <section class="hero">
-        <div class="logo-badge">K</div>
-        <h1>Kaba</h1>
-        <div class="tagline">Le monde à portée de main 🌍</div>
+    <div class="container">
+        <div class="logo">K</div>
         
-        <div class="grid-features">
-            <div class="card">
-                <div class="card-icon">🛍️</div>
-                <div class="card-title">Shopping Global</div>
-                <div class="card-text">Commandez partout dans le monde.</div>
+        <h1>Kaba</h1>
+        <p class="tagline">Le monde à portée de main 🌍</p>
+        
+        <div class="hero-card">
+            <p style="font-size: 20px;">L'application qui révolutionne l'achat international en Algérie. Connectez-vous avec des voyageurs certifiés et recevez vos produits préférés en toute sécurité.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🛍️</div>
+                <div class="feature-title">Shopping Global</div>
+                <p>Accédez aux plus grandes boutiques mondiales sans frontières.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">✈️</div>
-                <div class="card-title">Voyageurs</div>
-                <div class="card-text">Réseau de confiance vérifié.</div>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <div class="feature-title">Confiance</div>
+                <p>Un système de vérification rigoureux pour chaque transaction.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">🔒</div>
-                <div class="card-title">Sécurisé</div>
-                <div class="card-text">Paiement protégé par escrow.</div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Sécurité</div>
+                <p>Paiement protégé et garantie de réception conforme.</p>
             </div>
         </div>
-
-        <div class="cta-group">
-            <a href="https://play.google.com/store/apps/details?id=com.kaba.app" class="btn btn-primary">Installer Kaba</a>
+        
+        <div class="cta">
+            <a href="https://play.google.com/store/apps/details?id=com.kaba.app" class="btn">Télécharger Kaba</a>
             <a href="mailto:kabaalgerie@gmail.com" class="btn btn-secondary">Contact Support</a>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="home.html">Confidentialité</a>
-            <a href="delete-account.html">Suppression compte</a>
-        </div>
-        <div class="dev-credit">
-            <p><strong>Développeur Officiel : Lakhal Oussama</strong></p>
-            <p>© 2024-2026 Kaba Marketplace | kabaalgerie@gmail.com</p>
-        </div>
-    </footer>
-
+        
+        <footer class="footer">
+            <div class="legal-links">
+                <a href="home.html">Politique de confidentialité</a>
+                <a href="delete-account.html">Suppression de compte</a>
+            </div>
+            
+            <div class="dev-info">
+                <strong>Propriétaire & Développeur : Lakhal Oussama</strong><br>
+                Projet : Kaba Marketplace<br>
+                Contact : kabaalgerie@gmail.com<br>
+                <em>Identité vérifiée via DUNS et Google Play Console</em>
+            </div>
+            
+            <p style="margin-top:20px; opacity: 0.6;">© 2024-2026 Kaba. Tous droits réservés.</p>
+        </footer>
+    </div>
 </body>
 </html>
