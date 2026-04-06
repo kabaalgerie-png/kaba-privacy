@@ -2,217 +2,311 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suppression de Compte - Kaba Algérie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Supprimer mon compte - Kaba Algérie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bordeaux: #8B1538;
-            --bordeaux-light: #fff5f6;
-            --text-dark: #2d3436;
-            --text-gray: #636e72;
-            --bg-light: #f9f9fb;
-            --warning-bg: #fff3cd;
-            --warning-border: #ffc107;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
+            background: linear-gradient(145deg, #fef7f5 0%, #fff 100%);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1e1e2f;
+            line-height: 1.5;
         }
 
         .container {
-            max-width: 700px;
-            width: 100%;
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            border-top: 10px solid var(--bordeaux);
-            margin-top: 20px;
+            max-width: 780px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px -12px rgba(139, 21, 56, 0.12);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        h1 { 
-            color: var(--bordeaux); 
-            text-align: center; 
-            font-size: 28px; 
+        .container:hover {
+            box-shadow: 0 25px 45px -15px rgba(139, 21, 56, 0.2);
+        }
+
+        /* Bandeau drapeau algérien */
+        .flag-strip {
+            height: 6px;
+            background: linear-gradient(90deg, #006233 0%, #006233 33%, #fff 33%, #fff 66%, #D21034 66%, #D21034 100%);
+        }
+
+        .content {
+            padding: 2.5rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            background: linear-gradient(135deg, #8B1538, #c94f6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            display: inline-block;
         }
 
-        .intro {
-            text-align: center;
-            color: var(--text-gray);
-            margin-bottom: 40px;
-            font-size: 15px;
+        .subhead {
+            color: #5a6874;
+            border-left: 3px solid #8B1538;
+            padding-left: 1rem;
+            margin: 1rem 0 2rem 0;
+            font-weight: 400;
         }
 
-        h2 { 
-            color: var(--bordeaux); 
-            font-size: 18px;
-            margin-bottom: 15px;
+        .card {
+            background: #fff9fa;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border: 1px solid rgba(139, 21, 56, 0.1);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: rgba(139, 21, 56, 0.3);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #8B1538;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
         }
 
-        .method-card {
-            background: var(--bordeaux-light);
-            border: 1px solid rgba(139, 21, 56, 0.1);
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-        }
-
-        .steps {
+        .step-list {
             list-style: none;
-            counter-reset: my-counter;
+            counter-reset: step;
         }
 
-        .steps li {
-            counter-increment: my-counter;
-            margin-bottom: 12px;
+        .step-list li {
+            counter-increment: step;
+            margin-bottom: 1rem;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 15px;
+            gap: 0.9rem;
+            font-size: 0.95rem;
+            color: #2c3e44;
         }
 
-        .steps li::before {
-            content: counter(my-counter);
-            background: var(--bordeaux);
+        .step-list li::before {
+            content: counter(step);
+            background: #8B1538;
             color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
+            width: 26px;
+            height: 26px;
+            border-radius: 30px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
             flex-shrink: 0;
-            margin-top: 2px;
+            margin-top: -2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .highlight { font-weight: 600; color: var(--bordeaux); }
+        .badge {
+            background: #f0eef2;
+            border-radius: 40px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #8B1538;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
 
         .btn-mail {
-            display: inline-block;
-            background: var(--bordeaux);
-            color: white !important;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #8B1538;
+            color: white;
+            padding: 0.85rem 1.8rem;
+            border-radius: 60px;
+            text-decoration: none;
             font-weight: 600;
-            margin: 15px 0;
-            transition: transform 0.2s;
-            font-size: 14px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            box-shadow: 0 4px 10px rgba(139,21,56,0.2);
+            margin: 0.75rem 0 0.5rem;
         }
 
-        .btn-mail:hover { transform: scale(1.03); }
-
-        .warning-box {
-            background: var(--warning-bg);
-            border-left: 5px solid var(--warning-border);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-            font-size: 14px;
+        .btn-mail:hover {
+            background: #6e0e2c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(139,21,56,0.25);
         }
 
-        .data-list {
-            padding: 15px;
-            background: #fdfdfd;
-            border-radius: 12px;
-            border: 1px dashed #ddd;
+        .warning {
+            background: #fff7e5;
+            border-left: 5px solid #f5b042;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+            font-size: 0.9rem;
         }
 
-        .data-list li {
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--text-gray);
-            list-style-type: "• ";
-            margin-left: 20px;
+        .warning strong {
+            color: #c96b0e;
+            display: block;
+            margin-bottom: 0.4rem;
         }
 
-        .footer {
+        .data-box {
+            background: #f8f9fc;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .data-box ul {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .data-box li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            color: #2d3e50;
+        }
+
+        .data-box li::before {
+            content: "🗑️";
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #edeff2;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            color: #8B1538;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #b33b5c;
+        }
+
+        .small-note {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid #eee;
-            font-size: 13px;
+            font-size: 0.7rem;
+            color: #7e8a98;
+            margin-top: 1.2rem;
         }
 
-        .footer a { 
-            color: var(--bordeaux); 
-            text-decoration: none; 
-            margin: 0 10px;
-            font-weight: 600;
-        }
-
-        .footer a:hover { text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            .container { padding: 30px 20px; }
-            h1 { font-size: 24px; }
+        @media (max-width: 550px) {
+            body {
+                padding: 1rem;
+            }
+            .content {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .card h2 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <h1>Suppression de compte</h1>
-    <p class="intro">Nous respectons votre vie privée. Si vous choisissez de nous quitter, voici comment supprimer définitivement vos données.</p>
+    <div class="flag-strip"></div>
+    <div class="content">
+        <h1>Supprimer mon compte</h1>
+        <div class="subhead">
+            Nous respectons votre vie privée. Vous trouverez ci-dessous les deux méthodes pour effacer définitivement vos données.
+        </div>
 
-    <div class="method-card">
-        <h2>📱 Via l'application Kaba</h2>
-        <ul class="steps">
-            <li>Ouvrez votre application <span class="highlight">Kaba</span>.</li>
-            <li>Rendez-vous dans l'onglet <span class="highlight">Profil</span>.</li>
-            <li>Sélectionnez la rubrique <span class="highlight">Service Client</span>.</li>
-            <li>Appuyez sur le bouton <span class="highlight">Supprimer mon compte</span>.</li>
-            <li>Confirmez l'action pour finaliser la procédure.</li>
-        </ul>
-    </div>
+        <!-- Méthode 1 : via l'application -->
+        <div class="card">
+            <h2><span>📱</span> Depuis l’application Kaba</h2>
+            <ul class="step-list">
+                <li>Ouvrez Kaba et rendez-vous dans l’onglet <strong>Profil</strong>.</li>
+                <li>Appuyez sur <strong>Service client</strong> (ou « Aide »).</li>
+                <li>Cliquez sur <strong>Supprimer mon compte</strong> en bas de l’écran.</li>
+                <li>Confirmez votre choix. Un dernier avertissement vous sera affiché.</li>
+            </ul>
+            <div class="badge">⏱️ Suppression immédiate après confirmation</div>
+        </div>
 
-    <div class="method-card">
-        <h2>📧 Par demande e-mail</h2>
-        <p style="font-size: 14px; color: var(--text-gray);">Si vous n'avez plus accès à l'application, contactez notre support :</p>
-        <a href="mailto:kabaalgerie@gmail.com" class="btn-mail">Faire une demande de suppression</a>
-        <p><small style="color: var(--text-gray);">Délai de traitement : maximum 30 jours.</small></p>
-    </div>
+        <!-- Méthode 2 : par email -->
+        <div class="card">
+            <h2><span>✉️</span> Par demande e-mail</h2>
+            <p style="margin-bottom: 0.25rem;">Si vous n’avez plus accès à l’application, écrivez-nous depuis l’adresse associée à votre compte Kaba.</p>
+            <a href="mailto:kabaalgerie@gmail.com?subject=Demande%20de%20suppression%20de%20compte&body=Bonjour,%20je%20souhaite%20supprimer%20définitivement%20mon%20compte%20Kaba%20associé%20à%20cette%20adresse%20email.%20Merci%20de%20confirmer%20la%20procédure." class="btn-mail">
+                📨 Envoyer la demande
+            </a>
+            <p><small style="color:#6c7a8a;">Délai légal : maximum 30 jours (souvent traité sous 48h).</small></p>
+        </div>
 
-    <div class="warning-box">
-        <strong>⚠️ Note importante :</strong> La suppression est définitive. Vous perdrez l'accès à votre historique, vos messages en cours et le solde éventuel de votre Wallet.
-    </div>
+        <!-- Avertissement important -->
+        <div class="warning">
+            <strong>⚠️ Action irréversible</strong>
+            <p>La suppression de votre compte est définitive. Vous perdrez définitivement :</p>
+            <ul style="margin-top: 0.6rem; margin-left: 1.2rem;">
+                <li>L’accès à votre profil, historique et messages</li>
+                <li>Toutes vos annonces et offres de voyage</li>
+                <li>Le <strong>solde de votre wallet</strong> — pensez à le vider avant toute suppression</li>
+            </ul>
+        </div>
 
-    <h2 style="font-size: 16px; margin-top: 30px;">📂 Données supprimées définitivement</h2>
-    <div class="data-list">
-        <ul>
-            <li>Informations personnelles (Nom, Prénom, Téléphone, Email)</li>
-            <li>Annonces publiées et offres de voyage</li>
-            <li>Historique des conversations (Chat)</li>
-            <li>Photos de profil et documents de vérification</li>
-        </ul>
-    </div>
+        <!-- Données supprimées -->
+        <div class="data-box">
+            <strong style="color:#8B1538;">📂 Données définitivement effacées</strong>
+            <ul>
+                <li>Informations personnelles (nom, prénom, téléphone, email)</li>
+                <li>Annonces publiées et offres de voyage</li>
+                <li>Historique des conversations (chat)</li>
+                <li>Photos de profil, documents KYC et pièces d’identité</li>
+                <li>Historique des transactions (anonymisé pour la comptabilité légale)</li>
+            </ul>
+        </div>
 
-    <div class="footer">
-        © 2026 Kaba Algérie • 
-        <a href="https://kabaalgerie-png.github.io/kaba-privacy/">Confidentialité</a> • 
-        <a href="index.html">Accueil</a>
+        <!-- Liens de navigation -->
+        <div class="footer-links">
+            <a href="https://kabaalgerie-png.github.io/kaba-privacy/">🏠 Politique de confidentialité</a>
+            <a href="https://kabaalgerie-png.github.io/kaba-privacy/home.html">📱 Accueil Kaba</a>
+            <a href="mailto:kabaalgerie@gmail.com">✉️ Support</a>
+        </div>
+        <div class="small-note">
+            Kaba Algérie • Auto-entrepreneur n° 108611170348226744 • Vieux-Kouba, Alger 🇩🇿
+        </div>
     </div>
 </div>
-
 </body>
 </html>
