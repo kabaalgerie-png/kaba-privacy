@@ -131,6 +131,62 @@
             margin: 0 auto;
         }
 
+        /* Galerie d'images (mockups) */
+        .gallery {
+            margin: 60px 0;
+        }
+
+        .gallery h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .mockup-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .mockup {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 36px;
+            padding: 15px;
+            width: 220px;
+            transition: var(--transition);
+        }
+
+        .mockup:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mockup-screen {
+            background: #1a1a2e;
+            border-radius: 28px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mockup-screen i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .mockup-screen p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Features existantes */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -175,6 +231,130 @@
         .feature p {
             font-size: 15px;
             opacity: 0.9;
+        }
+
+        /* Étapes */
+        .steps {
+            margin: 60px 0;
+        }
+
+        .steps h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            color: var(--kaba-red);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Témoignages */
+        .testimonials {
+            margin: 60px 0;
+        }
+
+        .testimonials h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 25px;
+            text-align: left;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--kaba-red);
+        }
+
+        /* Partenaires */
+        .partners {
+            margin: 60px 0;
+        }
+
+        .partners h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .partner {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 60px;
+            font-weight: 600;
         }
 
         .btn-group {
@@ -279,6 +459,13 @@
             .feature {
                 padding: 24px 16px;
             }
+            .mockup {
+                width: 180px;
+            }
+            .mockup-screen {
+                min-height: 300px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -299,7 +486,36 @@
         <div class="hero-card">
             <p>L'application qui révolutionne l'achat international en Algérie. Connectez-vous avec des voyageurs certifiés et recevez vos produits préférés en toute sécurité.</p>
         </div>
-        
+
+        <!-- Galerie d'aperçu de l'application (captures d'écran) -->
+        <div class="gallery">
+            <h2>📱 Aperçu de l'application</h2>
+            <div class="mockup-grid">
+                <div class="mockup">
+                    <div class="mockup-screen">
+                        <span style="font-size: 48px;">🛍️</span>
+                        <strong>Annonces</strong>
+                        <p>Publiez vos demandes ou produits</p>
+                    </div>
+                </div>
+                <div class="mockup">
+                    <div class="mockup-screen">
+                        <span style="font-size: 48px;">✈️</span>
+                        <strong>Voyageurs</strong>
+                        <p>Trouvez un transporteur de confiance</p>
+                    </div>
+                </div>
+                <div class="mockup">
+                    <div class="mockup-screen">
+                        <span style="font-size: 48px;">💬</span>
+                        <strong>Chat</strong>
+                        <p>Négociez en temps réel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fonctionnalités -->
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">🛍️</div>
@@ -315,6 +531,59 @@
                 <div class="feature-icon">🛡️</div>
                 <div class="feature-title">Sécurité</div>
                 <p>Paiement protégé et garantie de réception conforme.</p>
+            </div>
+        </div>
+
+        <!-- Comment ça marche -->
+        <div class="steps">
+            <h2>⚡ Comment ça marche ?</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Publiez une demande</h3>
+                    <p>Indiquez le produit que vous cherchez ou le voyage que vous proposez.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Matching intelligent</h3>
+                    <p>Notre algorithme vous met en relation avec des voyageurs ou acheteurs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Les fonds sont bloqués jusqu'à la livraison. Vous êtes protégé.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Témoignages (exemples) -->
+        <div class="testimonials">
+            <h2>💬 Ils nous font confiance</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Grâce à Kaba, j'ai reçu mon colis de France en 5 jours. Très fiable !"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">A</div>
+                        <div><strong>Amira</strong><br>Alger</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Je voyage souvent entre Paris et Alger. Kaba m'aide à rentabiliser mes bagages."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">M</div>
+                        <div><strong>Mehdi</strong><br>Voyageur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partenaires -->
+        <div class="partners">
+            <h2>🤝 Nos partenaires</h2>
+            <div class="partner-logos">
+                <div class="partner">ABEX Express</div>
+                <div class="partner">Visa (prochainement)</div>
+                <div class="partner">Algérie Poste</div>
             </div>
         </div>
         
